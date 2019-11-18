@@ -27,6 +27,6 @@
     position: relative;
     background: #ffffff;
     min-height: 100vh;
-    background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+    //background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
   }
 </style>

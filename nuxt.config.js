@@ -22,7 +22,12 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,900&display=swap"
+          "https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap"
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Noto+Serif+TC&display=swap"
       },
       {
         rel: "stylesheet",
@@ -37,7 +42,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#fff" },
+  loading: { color: "#3B8070" },
   /*
    ** Global CSS
    */

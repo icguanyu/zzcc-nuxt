@@ -29,6 +29,7 @@
           spaceBetween: 10,
           centeredSlides: true,
           loop: true,
+          speed: 500,
           autoplay: {
             delay: 5000,
             disableOnInteraction: false
@@ -56,7 +57,7 @@
 <style lang="scss" scoped>
   .swiper-container {
     height: 320px;
-    position: relative; 
+    position: relative;
     overflow: hidden;
   }
   .swiper-slide {

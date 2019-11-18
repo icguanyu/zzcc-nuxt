@@ -21,7 +21,7 @@
     },
     methods: {
       onLoadUser() {
-        this.$router.push("/users/" + this.userId);
+        this.$router.push("/news/" + this.userId);
       }
     }
   };

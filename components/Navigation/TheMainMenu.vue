@@ -76,12 +76,12 @@
       function dropDown() {
         let nowindex = $(this).index();
         $dropdown.hide();
-        $dropdown.eq(nowindex).fadeIn(300);
+        $dropdown.eq(nowindex).stop().fadeIn(300);
       }
 
       $menu.mouseenter(dropDown);
       $menu.mouseleave(() => {
-        $dropdown.fadeOut(200);
+        $dropdown.stop().fadeOut(200);
       });
       $(window).scroll(toggleMenu);
       let timer;
@@ -187,6 +187,7 @@
   }
   .dropdown {
     display: none;
+    border: 1px solid $border-gray;
     color: #fff;
     position: absolute;
     box-sizing: border-box;

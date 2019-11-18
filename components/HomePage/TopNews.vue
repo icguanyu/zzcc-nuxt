@@ -1,9 +1,11 @@
 <template>
   <div class="top-news">
     <div class="content">
-      <div class="head">重要訊息</div>
+      <div class="head">
+        <i class="fas fa-bullhorn"></i>重要訊息
+      </div>
 
-      <div v-swiper:mySwiper="swiperOption">
+      <div v-swiper:mySwiper="swiperOption" v-if="topNews">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(news,index) in topNews" :key="index">
             <div class="news">
@@ -20,6 +22,12 @@
 <script>
   export default {
     name: "TopNews",
+    props: {
+      topNews: {
+        type: Array,
+        required: true
+      }
+    },
     data() {
       return {
         swiperOption: {
@@ -34,30 +42,8 @@
           autoplay: {
             delay: 2500,
             disableOnInteraction: false
-          },
-        },
-        topNews: [
-          {
-            date: "2018/11/01",
-            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
-          },
-          {
-            date: "2018/11/01",
-            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
-          },
-          {
-            date: "2018/11/01",
-            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
-          },
-          {
-            date: "2018/11/01",
-            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
-          },
-          {
-            date: "2018/11/01",
-            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
           }
-        ]
+        }
       };
     }
   };
@@ -82,6 +68,9 @@
         border-radius: 3px;
         letter-spacing: 2px;
         color: #fff;
+        i {
+          margin-right: 5px;
+        }
       }
       .news {
         display: flex;
@@ -98,7 +87,7 @@
     }
   }
   .swiper-container {
-    flex:11;
+    flex: 11;
     height: 40px;
   }
   .swiper-slide {
