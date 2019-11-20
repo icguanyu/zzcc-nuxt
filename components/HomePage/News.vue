@@ -96,7 +96,7 @@
 </script>
 <style lang="scss" scoped>
   .news-list {
-    width: 1100px;
+    max-width: 1280px;
     margin: 20px auto;
   }
 </style>

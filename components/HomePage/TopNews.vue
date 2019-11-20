@@ -55,7 +55,7 @@
     background: #fff;
     padding: 10px 0;
     .content {
-      width: 1100px;
+      width: 1280px;
       margin: 0 auto;
       display: flex;
       text-align: center;

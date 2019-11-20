@@ -40,7 +40,7 @@
     transition: all 0.3s;
     z-index: 99;
     .content {
-      width: 1100px;
+      width: 1280px;
       margin: 0 auto;
       display: flex;
       align-items: center;

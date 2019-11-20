@@ -61,7 +61,7 @@
     overflow: hidden;
   }
   .swiper-slide {
-    width: 1100px;
+    width: 1280px;
     background: #fff;
     height: 320px;
     border-radius: 10px;

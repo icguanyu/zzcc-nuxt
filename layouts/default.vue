@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default">
     <TheHeader @toggleMenu="isOpen = !isOpen" />
     <TheMainMenu :isOpen="isOpen" />
     <nuxt />
@@ -26,6 +26,7 @@
   body {
     position: relative;
     background: #ffffff;
+    width: 100%;
     min-height: 100vh;
     //background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
   }

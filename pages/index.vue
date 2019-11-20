@@ -1,8 +1,9 @@
 <template>
-  <div class="swiper">
+  <div>
     <TopNews :topNews="topNews" />
     <Swiper />
     <News />
+    <ProjectNews />
   </div>
 </template>
 
@@ -10,11 +11,13 @@
   import TopNews from "@/components/HomePage/TopNews";
   import Swiper from "@/components/HomePage/swiper";
   import News from "@/components/HomePage/News";
+  import ProjectNews from "@/components/HomePage/ProjectNews";
   export default {
     components: {
       Swiper,
       TopNews,
-      News
+      News,
+      ProjectNews
     },
     // asyncData(context, callback) {
     //   console.log(context);
@@ -52,8 +55,4 @@
 </script>
 
 <style lang="scss" scoped>
-  .swiper {
-    width: 100%;
-    height: 1000px;
-  }
 </style>

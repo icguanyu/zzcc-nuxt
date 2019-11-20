@@ -11,8 +11,8 @@
         </div>
         <div class="center">
           <div class="content">
-            <div class="title">{{news.content.title}}</div>
-            <div class="text">{{news.content.text}}</div>
+            <div class="title">{{news.content.title|StringLengthFilter(30)}}</div>
+            <div class="text">{{news.content.text|StringLengthFilter(70)}}</div>
           </div>
         </div>
         <div class="thumbnail-right" :style="`backgroundImage:url(${news.thumb})`">
@@ -44,19 +44,20 @@
 </script>
 
 <style lang="scss" scoped>
-.news-list{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .news {
     font-family: "Noto Serif TC", serif;
     display: flex;
 
-    max-height: 180px;
+    max-height: 160px;
     margin: 10px 0;
     .left-side {
       border-right: 1px solid $border-gray;
+      padding-right: 10px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -90,7 +91,7 @@
     }
     .center {
       flex: 7;
-      padding: 20px 40px 20px 60px;
+      padding: 20px 40px 20px 40px;
       &:hover {
         background: rgba($primary, 0.1);
       }
@@ -109,7 +110,7 @@
     }
     .thumbnail-right {
       flex: 3;
-      height: 170px;
+      height: 150px;
       background-size: cover;
       background-position: center center;
       overflow: hidden;
@@ -133,18 +134,36 @@
     }
   }
   .more {
+    position: relative;
     cursor: pointer;
     margin: 20px auto;
-    display: inline-block;
-    padding: 15px 30px;
-    background: $primary;
-    color: #fff;
+    padding: 10px 30px;
     border-radius: 3px;
-    &:hover{
-      background: $primary-light;
+    color: $font-text;
+    border: 1px solid $border-gray;
+    &:hover {
+      color: #fff;
+      background: $primary;
+      border: 1px solid $primary;
     }
-    i{
+    i {
       margin: 0 10px;
+    }
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 1px;
+      background: $border-gray;
+    }
+    &:after {
+      left: 110%;
+    }
+    &:before {
+      right: 110%;
     }
   }
 </style>

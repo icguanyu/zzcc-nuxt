@@ -117,7 +117,7 @@
     height: 70px;
     z-index: 99;
     > ul {
-      width: 1100px;
+      width: 1280px;
       margin: 0px auto;
       display: flex;
       align-items: center;
@@ -200,7 +200,7 @@
   }
 
   .sub_menu {
-    width: 1100px;
+    width: 1280px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
