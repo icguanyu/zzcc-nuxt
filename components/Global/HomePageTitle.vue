@@ -1,7 +1,7 @@
 <template>
   <div class="title">
     <h1>{{title}}</h1>
-    <p>{{subtitle}}</p>
+    <div class="subtitle">{{subtitle}}</div>
     <nuxt-link :to="link.path" v-if="link">
       <div class="more">
         {{link.name}}
@@ -22,7 +22,7 @@
       },
       subtitle: {
         type: String,
-        required: false,
+        required: false
       },
       link: {
         type: Object,
@@ -33,33 +33,51 @@
 </script>
 <style lang="scss" scoped>
   .title {
-    padding: 10px 0;
-    text-align: center;
+    font-family: "Noto Serif TC", serif !important;
+    padding: 5px 0;
+    letter-spacing: 3px;
+    margin-left: 10px;
     position: relative;
+    display: flex;
+    align-items: flex-end;
     h1 {
-      font-size: 1.6em;
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.4rem;
+      
       font-weight: 700;
       margin: 0;
       color: $font-black;
     }
-    p {
-      letter-spacing: 2px;
+    .subtitle {
+      font-size: 1rem;
+      line-height: 1.4rem;
+      letter-spacing: 1px;
       font-style: italic;
-      margin: 5px 0;
+      margin: 0 0 0 10px;
       color: $font-gray;
     }
-    .more {
+    &:before {
+      content: "";
       position: absolute;
-      right: 0;
+      left: -16px;
       top: 50%;
       transform: translateY(-50%);
-      color: $primary;
-      padding: 5px 15px;
-      border: 1px solid $primary;
-      border-radius: 20px;
-      i {
-        margin: 0 5px;
-      }
+      width: 5px;
+      border-top: 12px solid $primary;
+      border-bottom: 12px solid $second;
     }
+    // .more {
+    //   position: absolute;
+    //   right: 0;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   color: $primary;
+    //   padding: 5px 15px;
+    //   border: 1px solid $primary;
+    //   border-radius: 20px;
+    //   i {
+    //     margin: 0 5px;
+    //   }
+    // }
   }
 </style>

@@ -1,9 +1,11 @@
 <template>
-  <div class="default">
-    <TheHeader @toggleMenu="isOpen = !isOpen" />
-    <TheMainMenu :isOpen="isOpen" />
-    <nuxt />
-  </div>
+  <v-app>
+    <div class="default">
+      <TheHeader @toggleMenu="isOpen = !isOpen" />
+      <TheMainMenu :isOpen="isOpen" />
+      <nuxt />
+    </div>
+  </v-app>
 </template>
 
 <script>

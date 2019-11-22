@@ -1,10 +1,10 @@
 <template>
   <div class="top-news">
     <div class="content">
-      <div class="head">
+      <!-- <div class="head">
         <i class="fas fa-bullhorn"></i>重要訊息
-      </div>
-
+      </div> -->
+      <v-btn color="red" dark depressed > <i class="fas fa-bullhorn"></i>重要訊息</v-btn>
       <div v-swiper:mySwiper="swiperOption" v-if="topNews">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(news,index) in topNews" :key="index">
@@ -53,25 +53,25 @@
   .top-news {
     width: 100%;
     background: #fff;
-    padding: 10px 0;
+    margin-top: 10px;
     .content {
       width: 1280px;
       margin: 0 auto;
       display: flex;
       text-align: center;
       align-items: center;
-      .head {
-        flex: 1;
-        white-space: nowrap;
-        padding: 10px 20px;
-        background: $primary;
-        border-radius: 3px;
-        letter-spacing: 2px;
-        color: #fff;
-        i {
-          margin-right: 5px;
-        }
-      }
+      // .head {
+      //   flex: 1;
+      //   white-space: nowrap;
+      //   padding: 8px 15px;
+      //   background: $primary;
+      //   border-radius: 3px;
+      //   letter-spacing: 2px;
+      //   color: #fff;
+      //   i {
+      //     margin-right: 5px;
+      //   }
+      // }
       .news {
         display: flex;
         align-items: center;
@@ -84,6 +84,11 @@
           color: $font-black;
         }
       }
+    }
+  }
+  .v-btn{
+    i{
+      margin-right: 5px;
     }
   }
   .swiper-container {

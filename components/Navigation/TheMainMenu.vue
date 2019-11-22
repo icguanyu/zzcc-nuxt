@@ -1,6 +1,12 @@
 <template>
   <nav class="main-menu">
     <ul>
+      <div class="quick-btn">
+        <!-- <i class="fas fa-book-reader"></i>
+        新學期課程一覽-->
+
+        <img class="logo_pc" src="~assets/images/logo.png" alt />
+      </div>
       <li>
         <p>課務專區</p>
         <div class="dropdown">
@@ -53,10 +59,6 @@
       <li>
         <p>社大介紹</p>
       </li>
-      <div class="quick-btn">
-        <i class="fas fa-book-reader"></i>
-        新學期課程一覽
-      </div>
     </ul>
   </nav>
 </template>
@@ -74,9 +76,12 @@
       const $dropdown = $(".dropdown");
       const $quickBtn = $(".quick-btn");
       function dropDown() {
-        let nowindex = $(this).index();
+        let nowindex = $(this).index() - 1;
         $dropdown.hide();
-        $dropdown.eq(nowindex).stop().fadeIn(300);
+        $dropdown
+          .eq(nowindex)
+          .stop()
+          .fadeIn(300);
       }
 
       $menu.mouseenter(dropDown);
@@ -108,15 +113,16 @@
   }
 
   .main-menu {
+    font-family: "Noto Sans TC", sans-serif;
     display: flex;
     width: 100%;
     background: #fff;
     border-bottom: 1px solid $border-gray;
     position: sticky;
     top: 0;
-    height: 70px;
     z-index: 99;
     > ul {
+      padding: 0;
       width: 1280px;
       margin: 0px auto;
       display: flex;
@@ -128,11 +134,29 @@
         flex: 1;
         text-align: center;
         letter-spacing: 2px;
-        border-bottom: 4px solid rgba(255, 255, 255, 0);
-
+        p {
+          position: relative;
+          overflow: hidden;
+          &:before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg) translateX(-50%);
+            bottom: -9px;
+            left: 50%;
+            background: #446180;
+            background-image: url("https://www.transparenttextures.com/patterns/simple-dashed.png");
+            opacity: 0;
+            transition: all 0.3s;
+          }
+        }
         &:hover {
-          border-bottom: 4px solid $second;
-          transition: all 0.3s;
+          p{
+            &:before {
+              opacity: 1;
+            }
+          }
         }
         &:first-child > p:before {
           content: "";
@@ -146,7 +170,8 @@
         }
         p {
           position: relative;
-          padding: 25px 0;
+          padding: 20px 0;
+          margin-bottom: 0;
           &:after {
             content: "";
             position: absolute;
@@ -161,25 +186,27 @@
       }
       .quick-btn {
         cursor: pointer;
-        text-align: center;
-        margin: 10px;
-        padding: 15px;
+        //text-align: center;
+        //margin: 10px;
         width: 0;
         font-size: 0;
         transform: scale(0);
-        white-space: nowrap;
-        letter-spacing: 2px;
-        border-radius: 3px;
-        background: $second;
-        color: #fff;
+        // white-space: nowrap;
+        // letter-spacing: 2px;
+        // border-radius: 3px;
+        // background: $second;
+        // color: #fff;
         transition: all 0.5s;
-        &:hover {
-          background: #feb646;
-          box-shadow: 0px 3px 0px $second-dark;
+        img {
+          width: 100%;
         }
+        // &:hover {
+        //   background: #feb646;
+        //   box-shadow: 0px 3px 0px $second-dark;
+        // }
       }
       .show {
-        width: 200px;
+        width: 240px;
         font-size: initial;
         transform: scale(1);
       }
@@ -187,7 +214,7 @@
   }
   .dropdown {
     display: none;
-    border: 1px solid $border-gray;
+    //border-bottom: 1px solid $border-gray;
     color: #fff;
     position: absolute;
     box-sizing: border-box;
@@ -195,7 +222,7 @@
     left: 0;
     top: calc(100%);
     width: 100%;
-    background: $primary;
+    background: #446180;
     background-image: url("https://www.transparenttextures.com/patterns/simple-dashed.png");
   }
 
@@ -206,9 +233,10 @@
     justify-content: space-around;
     li {
       flex: 1;
-      padding: 30px 0;
+      padding: 35px 0;
       &:hover {
-        background: $primary-dark;
+        background: #6082a6;
+        background-image: url("https://www.transparenttextures.com/patterns/simple-dashed.png");
       }
     }
   }

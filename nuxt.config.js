@@ -71,7 +71,7 @@ export default {
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -81,6 +81,16 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
+        },
+        light: {
+          primary: "#144e8c",
+          primary_deep: "#0b3767",
+          green: "#489781",
+          green_deep: "#246653",
+          second: "#feb646",
+          second_deep: "#d97704",
+          red:"#e25959",
+          red_deep: "#cc3f3f"
         }
       }
     }

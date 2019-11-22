@@ -30,6 +30,7 @@
 
 <style lang="scss" scoped>
   .header {
+    font-family: "Noto Sans TC", sans-serif;
     width: 100%;
     position: relative;
     width: 100%;
@@ -112,7 +113,7 @@
     justify-content: center;
     align-items: center;
     margin: 10px;
-    border: 1px solid #000;
+    // border: 1px solid #000;
     // display: none;
     padding: 15px;
     border-radius: 3px;

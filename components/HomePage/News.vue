@@ -1,6 +1,6 @@
 <template>
   <div class="news-list">
-    <Title :title="'最新消息 News'" :subtitle="'社大行政事務、活動消息、校內外新聞等公告。'" :link="{name:'公告一覽',path:'/'}"></Title>
+    <!-- <Title :title="'最新消息'" :subtitle="'中正社大行政事務、校內外新聞等公告。'"></Title> -->
     <NewsList :newslist="newslist" />
   </div>
 </template>
@@ -97,6 +97,6 @@
 <style lang="scss" scoped>
   .news-list {
     max-width: 1280px;
-    margin: 20px auto;
+    margin: auto;
   }
 </style>

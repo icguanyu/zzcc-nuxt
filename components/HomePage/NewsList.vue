@@ -1,63 +1,144 @@
 <template>
   <section class="news-list">
-    <div>
-      <div class="news" v-for="news in newslist" :key="news.id">
-        <div class="left-side">
-          <div class="time">
-            <div class="year">{{news.time.year}}</div>
-            <div class="date">{{news.time.date}}</div>
-          </div>
-          <div class="cate">{{news.cate}}</div>
-        </div>
-        <div class="center">
-          <div class="content">
-            <div class="title">{{news.content.title|StringLengthFilter(30)}}</div>
-            <div class="text">{{news.content.text|StringLengthFilter(70)}}</div>
-          </div>
-        </div>
-        <div class="thumbnail-right" :style="`backgroundImage:url(${news.thumb})`">
-          <router-link :to="`/news/${news.id}`">
-            <div class="mask">
-              <i class="fas fa-external-link-alt"></i>
-            </div>
-          </router-link>
-        </div>
-      </div>
+    <div class="top">
+      <Title :title="'最新消息'" :subtitle="'中正社大行政事務、校內外新聞等公告。'"></Title>
+      <v-tabs fixed-tabs center-active right v-model="tabs" color="primary">
+        <v-tab>所有</v-tab>
+        <v-tab>行政</v-tab>
+        <v-tab>學務</v-tab>
+        <v-tab>活動</v-tab>
+        <v-tab>政令</v-tab>
+      </v-tabs>
     </div>
+    <TopNews :topNews="topNews" />
+    <v-tabs-items v-model="tabs">
+      <v-tab-item>
+        <div class="news" v-for="news in newslist" :key="news.id">
+          <div class="right-side">
+            <div class="time">
+              <div class="year">{{news.time.year}}</div>
+              <div class="date">{{news.time.date}}</div>
+            </div>
+            <div class="cate">{{news.cate}}</div>
+          </div>
+
+          <div class="center">
+            <div class="content">
+              <div class="title">{{news.content.title|StringLengthFilter(30)}}</div>
+              <div class="text">{{news.content.text|StringLengthFilter(70)}}</div>
+            </div>
+          </div>
+          <div class="thumbnail-left" :style="`backgroundImage:url(${news.thumb})`">
+            <router-link :to="`/news/${news.id}`">
+              <div class="mask">
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </router-link>
+          </div>
+        </div>
+      </v-tab-item>
+      <v-tab-item>
+        <v-skeleton-loader
+          ref="skeleton"
+          :boilerplate="false"
+          type="list-item-three-line"
+          :tile="false"
+          class="mx-auto"
+        ></v-skeleton-loader>
+      </v-tab-item>
+      <v-tab-item>未建立</v-tab-item>
+      <v-tab-item>未建立</v-tab-item>
+      <v-tab-item>未建立</v-tab-item>
+    </v-tabs-items>
     <div class="more">
-      所有消息
+      消息一覽
       <i class="fas fa-list"></i>
     </div>
   </section>
 </template>
 
 <script>
+  import TopNews from "@/components/HomePage/TopNews";
+  import Title from "@/components/Global/HomePageTitle";
   export default {
     name: "news",
+    components: {
+      Title,
+      TopNews
+    },
     props: {
       newslist: {
         type: Array,
         required: true
       }
+    },
+    data() {
+      return {
+        tabs: null,
+        topNews: [
+          {
+            date: "2018/11/01",
+            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
+          },
+          {
+            date: "2018/11/01",
+            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
+          },
+          {
+            date: "2018/11/01",
+            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
+          },
+          {
+            date: "2018/11/01",
+            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
+          },
+          {
+            date: "2018/11/01",
+            msg: "舛添要一さんも再登壇】今月のゲストをご紹介"
+          }
+        ]
+      };
     }
   };
 </script>
 
 <style lang="scss" scoped>
   .news-list {
+    font-family: "Noto Serif TC", serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .news {
-    font-family: "Noto Serif TC", serif;
+  .top {
     display: flex;
-
-    max-height: 160px;
+    align-items: center;
+    flex-wrap: wrap;
+    .title {
+      flex: 2;
+    }
+    .v-tabs {
+      flex: 1;
+    }
+    .v-tab {
+      min-width: 50px;
+    }
+  }
+  .news {
+    display: flex;
+    max-height: 150px;
     margin: 10px 0;
-    .left-side {
-      border-right: 1px solid $border-gray;
+    &:hover {
+      // .right-side {
+      //   box-shadow: -6px 0px 0px $primary;
+      // }
+      .center {
+        background: rgba($primary, 0.1);
+      }
+    }
+    .right-side {
+      border-right: 1px dashed $border-gray;
       padding-right: 10px;
+      padding-left: 20px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -69,7 +150,7 @@
         }
         .date {
           margin: 5px 0;
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           font-weight: 700;
           color: $primary;
         }
@@ -78,7 +159,7 @@
         cursor: pointer;
         display: inline-block;
         margin: 5px 0;
-        padding: 5px 10px;
+        padding: 3px 8px;
         border: 1px solid $border-gray;
         border-radius: 2px;
         transition: all 0.1s;
@@ -92,11 +173,9 @@
     .center {
       flex: 7;
       padding: 20px 40px 20px 40px;
-      &:hover {
-        background: rgba($primary, 0.1);
-      }
       .title {
-        font-size: 1.4rem;
+        font-family: "Noto Serif TC" !important;
+        font-size: 1.3rem;
         line-height: 1.6rem;
         padding: 0;
         margin-bottom: 10px;
@@ -108,9 +187,9 @@
         color: $font-text;
       }
     }
-    .thumbnail-right {
+    .thumbnail-left {
       flex: 3;
-      height: 150px;
+      height: 140px;
       background-size: cover;
       background-position: center center;
       overflow: hidden;

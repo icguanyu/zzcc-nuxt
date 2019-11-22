@@ -56,6 +56,7 @@
 
 <style lang="scss" scoped>
   .swiper-container {
+    margin-top: 10px;
     height: 320px;
     position: relative;
     overflow: hidden;
