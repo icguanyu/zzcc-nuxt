@@ -120,6 +120,9 @@
     }
     .swiper-slide {
       height: 220px;
+      img{
+        max-width: 100%;
+      }
     }
     .swiper-button-prev-custom,
     .swiper-button-next-custom {

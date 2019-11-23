@@ -1,11 +1,11 @@
 <template>
   <nav class="main-menu">
     <ul>
-      <div class="quick-btn">
+      <div class="logo">
         <!-- <i class="fas fa-book-reader"></i>
         新學期課程一覽-->
 
-        <img class="logo_pc" src="~assets/images/logo.png" alt />
+        <img src="~assets/images/logo.png" alt />
       </div>
       <li>
         <p>課務專區</p>
@@ -152,7 +152,7 @@
           }
         }
         &:hover {
-          p{
+          p {
             &:before {
               opacity: 1;
             }
@@ -184,7 +184,7 @@
           }
         }
       }
-      .quick-btn {
+      .logo {
         cursor: pointer;
         //text-align: center;
         //margin: 10px;
@@ -206,7 +206,8 @@
         // }
       }
       .show {
-        width: 240px;
+        width: 280px;
+        margin-left: 10px;
         font-size: initial;
         transform: scale(1);
       }

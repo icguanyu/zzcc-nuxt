@@ -36,7 +36,6 @@
     width: 100%;
     border-top: 5px solid $primary;
     border-bottom: 1px solid $border-gray;
-    padding: 10px 0;
     background: #fff;
     transition: all 0.3s;
     z-index: 99;
@@ -50,7 +49,7 @@
   }
   .logo {
     padding: 5px 10px;
-    width: 300px;
+    width: 360px;
     text-align: center;
     img {
       width: 100%;
@@ -194,6 +193,16 @@
         width: 25px;
         height: 2px;
       }
+    }
+  }
+  @media (max-width: 960px) {
+    .quick-btn {
+      .student {
+        width: 110px;
+      }
+    }
+    .hamburger {
+      padding: 15px 15px;
     }
   }
 </style>

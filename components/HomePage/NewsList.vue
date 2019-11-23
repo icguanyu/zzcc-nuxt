@@ -246,6 +246,10 @@
     .top {
       flex-direction: column;
       align-items: flex-start;
+      .v-tabs {
+        position: sticky;
+        top: 100px;
+      }
     }
     .news-list {
       .news {

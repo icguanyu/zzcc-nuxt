@@ -71,6 +71,7 @@
               slidesPerView: "2"
             },
             640: {
+              spaceBetween: 10,
               slidesPerView: "1"
             }
           }
@@ -110,11 +111,10 @@
       position: relative;
       img {
         position: absolute;
-        top: 50%;
+        top: 0%;
         left: 50%;
-        min-width: 100%;
-        height: 100%;
-        transform: translate(-50%, -50%);
+        width: 100%;
+        transform: translateX(-50%);
       }
     }
     p {
@@ -169,12 +169,23 @@
     // background-image: url('https://www.meiji.ac.jp/wr_common-v2/images/top/bg_topics.png');
   }
   @media (max-width: 640px) {
+    .swiper-slide {
+      .thumb {
+        height: 180px;
+      }
+    }
     .ltc-more {
       .ltc-slogan {
         font-size: 1.2rem;
         &:before,
         &:after {
           width: 80px;
+        }
+        &:before {
+          left: -100px;
+        }
+        &:after {
+          right: -100px;
         }
       }
     }

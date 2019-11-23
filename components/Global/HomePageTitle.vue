@@ -2,12 +2,6 @@
   <div class="title">
     <h1>{{title}}</h1>
     <div class="subtitle">{{subtitle}}</div>
-    <nuxt-link :to="link.path" v-if="link">
-      <div class="more">
-        {{link.name}}
-        <i class="fas fa-list"></i>
-      </div>
-    </nuxt-link>
   </div>
 </template>
 
@@ -22,10 +16,6 @@
       },
       subtitle: {
         type: String,
-        required: false
-      },
-      link: {
-        type: Object,
         required: false
       }
     }
@@ -64,27 +54,17 @@
       border-top: 12px solid $primary;
       border-bottom: 12px solid $second;
     }
-    // .more {
-    //   position: absolute;
-    //   right: 0;
-    //   top: 50%;
-    //   transform: translateY(-50%);
-    //   color: $primary;
-    //   padding: 5px 15px;
-    //   border: 1px solid $primary;
-    //   border-radius: 20px;
-    //   i {
-    //     margin: 0 5px;
-    //   }
-    // }
   }
   @media (max-width: 960px) {
     .title {
-      margin-bottom: 0;
       margin-left: 15px;
+      justify-content: space-between;
       h1 {
-        line-height: 1.4rem;
-        font-size: 1.2rem;
+        line-height: 1.6rem;
+        font-size: 1.4rem;
+      }
+      .subtitle{
+        font-size: 14px;
       }
     }
   }
