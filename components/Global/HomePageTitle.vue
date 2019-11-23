@@ -33,7 +33,6 @@
 </script>
 <style lang="scss" scoped>
   .title {
-    font-family: "Noto Serif TC", serif !important;
     padding: 5px 0;
     margin-bottom: 5px;
     letter-spacing: 3px;
@@ -42,9 +41,7 @@
     display: flex;
     align-items: flex-end;
     h1 {
-      font-family: "Noto Serif TC", serif;
       font-size: 1.4rem;
-
       font-weight: 700;
       margin: 0;
       color: $font-black;
@@ -84,7 +81,9 @@
   @media (max-width: 960px) {
     .title {
       margin-bottom: 0;
+      margin-left: 15px;
       h1 {
+        line-height: 1.4rem;
         font-size: 1.2rem;
       }
     }

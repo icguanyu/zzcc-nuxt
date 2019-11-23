@@ -32,6 +32,9 @@
     min-height: 100vh;
     //background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
   }
+  .default{
+    background: #ffffff;
+  }
 
   @media (max-width: 960px) {
   }

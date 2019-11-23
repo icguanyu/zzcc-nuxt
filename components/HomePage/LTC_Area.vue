@@ -100,7 +100,7 @@
   }
   .swiper-slide {
     width: 300px;
-    
+
     //width: 1280px;;
     .thumb {
       width: 100%;
@@ -122,31 +122,6 @@
       margin: 10px 0;
     }
   }
-
-  // .swiper-button-prev-custom,
-  // .swiper-button-next-custom {
-  //   z-index: 10;
-  //   cursor: pointer;
-  //   position: absolute;
-  //   top: 50%;
-  //   transform: translateY(-50%);
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   background-position: center center;
-  //   width: 70px;
-  //   height: 70px;
-  //   background-color: rgba(0, 0, 0, 0.1);
-  //   border-radius: 50%;
-  // }
-
-  // .swiper-button-prev-custom {
-  //   left: 20px;
-  //   background-image: url("~assets/images/icons/prev.png");
-  // }
-  // .swiper-button-next-custom {
-  //   right: 20px;
-  //   background-image: url("~assets/images/icons/next.png");
-  // }
   .v-parallax {
     position: absolute;
     left: 0;
@@ -164,7 +139,6 @@
     flex-direction: column;
     align-items: center;
     .ltc-slogan {
-      font-family: "Noto Serif TC", serif;
       position: relative;
       display: inline-block;
       text-align: center;
@@ -193,5 +167,16 @@
     }
 
     // background-image: url('https://www.meiji.ac.jp/wr_common-v2/images/top/bg_topics.png');
+  }
+  @media (max-width: 640px) {
+    .ltc-more {
+      .ltc-slogan {
+        font-size: 1.2rem;
+        &:before,
+        &:after {
+          width: 80px;
+        }
+      }
+    }
   }
 </style>

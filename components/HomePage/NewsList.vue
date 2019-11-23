@@ -2,7 +2,7 @@
   <section class="news-list">
     <div class="top">
       <!-- <Title :title="'最新消息'" :subtitle="'中正社大行政事務、校內外新聞等公告。'"></Title> -->
-      <v-tabs center-active v-model="tabs" color="primary">
+      <v-tabs center-active v-model="tabs" show-arrows color="primary">
         <v-tab>所有</v-tab>
         <v-tab>行政</v-tab>
         <v-tab>學務</v-tab>
@@ -104,7 +104,6 @@
 
 <style lang="scss" scoped>
   .news-list {
-    font-family: "Noto Serif TC", serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -159,7 +158,6 @@
         flex: 7;
         padding: 20px 40px 20px 40px;
         .news-title {
-          font-family: "Noto Serif TC" !important;
           font-size: 1.3rem;
           line-height: 1.6rem;
           padding: 0;
@@ -270,7 +268,7 @@
           flex: 7;
           padding: 10px 20px 10px 20px;
           .news-title {
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 1.2rem;
             margin-bottom: 5px;
           }
@@ -357,9 +355,10 @@
       }
     }
     .more {
+      padding: 10px;
       &:before,
       &:after {
-        width: 100px;
+        width: 25%;
       }
     }
   }

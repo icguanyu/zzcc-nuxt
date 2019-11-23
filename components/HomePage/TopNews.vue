@@ -5,7 +5,7 @@
         <i class="fas fa-bullhorn"></i>重要訊息
       </div>-->
       <v-btn color="red" dark depressed>
-        <i class="fas fa-bullhorn"></i>重要訊息
+        <i class="fas fa-bullhorn"></i>重要
       </v-btn>
       <div v-swiper:mySwiper="swiperOption" v-if="topNews">
         <div class="swiper-wrapper">

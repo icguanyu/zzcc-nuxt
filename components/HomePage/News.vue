@@ -1,6 +1,6 @@
 <template>
   <div class="news">
-    <Title :title="'最新消息'" :subtitle="'中正社大行政事務、校內外新聞等公告。'"></Title>
+    <Title :title="'最新消息'" :subtitle="'行政事務、校內外新聞等公告。'"></Title>
     <NewsList :newslist="newslist" />
   </div>
 </template>
