@@ -1,5 +1,12 @@
 import colors from "vuetify/es5/util/colors";
-
+const routerBase =
+  process.env.DEPLOY_ENV === "GH_PAGES"
+    ? {
+        router: {
+          base: "/<repository-name>/"
+        }
+      }
+    : {};
 export default {
   mode: "universal",
   /*
@@ -89,7 +96,7 @@ export default {
           green_deep: "#246653",
           second: "#feb646",
           second_deep: "#d97704",
-          red:"#e25959",
+          red: "#e25959",
           red_deep: "#cc3f3f"
         }
       }
@@ -103,5 +110,6 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
-  }
+  },
+  ...routerBase
 };
