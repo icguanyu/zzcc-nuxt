@@ -1,22 +1,30 @@
 <template>
-  <section>
-    <Title :title="'學員專區'"></Title>
+  <div class="left-link">
+    <Title :title="'快速連結'" :subtitle="'網站常用連結'"></Title>
     <div class="quick-link">
-      <QLStudent :data="student_btns" />
+      <div class="title-btn">
+        <i class="fas fa-book-reader"></i>學員專區
+      </div>
+      <QuickLink :data="student_btns" />
     </div>
-    <Title :title="'行政專區'"></Title>
-    <QLStudent :data="teacher_btns" />
-  </section>
+
+    <div class="quick-link">
+      <div class="title-btn">
+        <i class="fas fa-book-reader"></i>學員專區
+      </div>
+      <QuickLink :data="teacher_btns" />
+    </div>
+  </div>
 </template>
 
 <script>
   import Title from "@/components/Global/HomePageTitle";
-  import QLStudent from "@/components/Swipers/QuickLinkStudent";
+  import QuickLink from "@/components/Swipers/QuickLink";
   export default {
     name: "quick-link",
     components: {
-      Title,
-      QLStudent
+      QuickLink,
+      Title
     },
     data() {
       return {
@@ -60,11 +68,6 @@
             name: "研習證明",
             thumb:
               "https://www.mohw.gov.tw/Public/Images/201701/2261701091037c438f.png"
-          },
-          {
-            name: "查詢",
-            thumb:
-              "https://www.mohw.gov.tw/Public/Images/201701/24517010910396e4b0.png"
           }
         ],
         teacher_btns: [
@@ -81,35 +84,35 @@
           {
             name: "粉絲專頁",
             thumb:
-              "https://www.iconninja.com/files/245/45/195/facebook-media-social-like-network-fb-icon.svg"
+              "https://www.mohw.gov.tw/Public/Images/201701/24517010910396e4b0.png"
           },
           {
             name: "官方LINE@",
             thumb:
-              "https://images.vexels.com/media/users/3/137381/isolated/preview/4e11f9375a642d3d1d296dfadd5be8e0-line-icon-logo-by-vexels.png"
+              "https://www.mohw.gov.tw/Public/Images/201701/2261701091037c438f.png"
           },
 
           {
             name: "Youtube",
             thumb:
-              "https://upload.wikimedia.org/wikipedia/commons/e/e1/Logo_of_YouTube_%282015-2017%29.svg"
+              "https://www.mohw.gov.tw/Public/Images/201701/2261701091037c438f.png"
+          },
+          {
+            name: "查詢",
+            thumb:
+              "https://www.mohw.gov.tw/Public/Images/201701/24517010910396e4b0.png"
+          },
+          {
+            name: "課程一覽",
+            thumb:
+              "https://www.mohw.gov.tw/Public/Images/201701/31817010910299bc0e.png"
+          },
+          {
+            name: "行事曆",
+            thumb:
+              "https://www.mohw.gov.tw/Public/Images/201701/73917010910263d5fd.png"
           }
-        ],
-        swiperOption: {
-          direction: "vertical",
-          slidesPerView: 3, //一行显示3个
-          slidesPerColumn: 2, //显示2行
-          // grabCursor: true,
-          //spaceBetween: 10,
-          autoWidth: true,
-          breakpoints: {
-            640: {
-              direction: "horizontal",
-              slidesPerView: 2, //一行显示3个
-              slidesPerColumn: 1 //显示2行
-            }
-          }
-        }
+        ]
       };
     }
   };
@@ -117,8 +120,47 @@
 
 
 <style lang="scss" scoped>
+  .left-link {
+    width: 1280px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 15px;
+  }
   .quick-link {
-    overflow: hidden;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    .title-btn {
+      width: 120px;
+      height: 90px;
+      margin-right: 10px;
+      padding: 10px 30px;
+      background: $primary-light;
+      border-radius: 3px;
+      font-family: "Noto Sans TC", sans-serif;
+      text-align: center;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      color: #fff;
+      line-height: 1.6rem;
+      i {
+        //font-size: 1rem;
+        margin-bottom: 3px;
+        display: block;
+      }
+    }
+  }
+  @media (max-width: 960px) {
+    .left-link {
+      width: 95%;
+      .quick-link {
+        .title-btn {
+          width: 100px;
+          font-size: 1rem;
+          line-height: 1.2rem;
+          height: 80px;
+          padding: 10px 25px;
+        }
+      }
+    }
   }
 </style>

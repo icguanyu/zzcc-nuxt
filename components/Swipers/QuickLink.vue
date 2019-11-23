@@ -24,17 +24,23 @@
     data() {
       return {
         swiperOption: {
-          direction: "vertical",
-          slidesPerView: 3, //一行显示3个
-          slidesPerColumn: 2, //显示2行
+          slidesPerView: 7, 
+          //slidesPerColumn: 4,
+          //slidesPerColumnFill : 'row',
           // grabCursor: true,
-          //spaceBetween: 10,
-          autoWidth: true,
+          spaceBetween: 10,
+          //allowTouchMove: false,
           breakpoints: {
+            960: {
+              //slidesPerColumnFill : 'column',
+              allowTouchMove: true,
+              slidesPerView: 4, //一行显示3个
+            },
             640: {
-              direction: "horizontal",
-              slidesPerView: 2, //一行显示3个
-              slidesPerColumn: 1 //显示2行
+              slidesPerView: 3,
+            },
+            500: {
+              slidesPerView: 2,
             }
           }
         }
@@ -45,24 +51,24 @@
 
 <style lang="scss" scoped>
   .swiper-container {
-    width: 250px;
-    height: 340px;
-    margin: inherit;
-    padding-bottom: 50px;
+    //width: 250px;
+    width: 100%;
+    height: 100px;
+    padding-right: 50px;
     overflow: hidden;
   }
   .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+   
     .btn {
       cursor: pointer;
       font-family: "Noto Sans TC", sans-serif;
       width: 100%;
       height: 90%;
       border-radius: 3px;
-      margin: 5px;
+      
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -78,6 +84,29 @@
       &:hover {
         background: #eee;
       }
+    }
+  }
+  @media (max-width: 960px) {
+    .swiper-container {
+      width: 100%;
+      height: 100px;
+      padding-right: 50px;
+      padding-bottom: 0;
+    }
+    .swiper-slide {
+      .btn {
+        img {
+          width: 40px;
+        }
+      }
+    }
+  }
+  @media (max-width: 640px) {
+    .swiper-container {
+      height: 90px;
+    }
+    .swiper-slide {
+      width: 100px !important;
     }
   }
 </style>

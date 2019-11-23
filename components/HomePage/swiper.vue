@@ -106,18 +106,25 @@
   }
 
   @media (max-width: 960px) {
+    .swiper-container {
+      height: 280px;
+    }
     .swiper-slide {
-      width: 800px;
+      width: 95%;
+      height: 280px;
     }
   }
   @media (max-width: 640px) {
+    .swiper-container {
+      height: 220px;
+    }
+    .swiper-slide {
+      height: 220px;
+    }
     .swiper-button-prev-custom,
     .swiper-button-next-custom {
       width: 50px;
       height: 50px;
-    }
-    .swiper-slide {
-      width: 90%;
     }
   }
 </style>

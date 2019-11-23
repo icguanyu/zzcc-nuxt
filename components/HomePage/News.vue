@@ -1,6 +1,6 @@
 <template>
-  <div class="news-list">
-    <!-- <Title :title="'最新消息'" :subtitle="'中正社大行政事務、校內外新聞等公告。'"></Title> -->
+  <div class="news">
+    <Title :title="'最新消息'" :subtitle="'中正社大行政事務、校內外新聞等公告。'"></Title>
     <NewsList :newslist="newslist" />
   </div>
 </template>
@@ -95,8 +95,14 @@
   };
 </script>
 <style lang="scss" scoped>
-  .news-list {
-    max-width: 1280px;
-    margin: auto;
+  .news {
+    width: 1280px;
+    margin: 15px auto 0px auto;
+  }
+
+  @media (max-width: 960px) {
+    .news {
+      width: 95%;
+    }
   }
 </style>

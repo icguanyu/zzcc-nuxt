@@ -35,6 +35,7 @@
   .title {
     font-family: "Noto Serif TC", serif !important;
     padding: 5px 0;
+    margin-bottom: 5px;
     letter-spacing: 3px;
     margin-left: 10px;
     position: relative;
@@ -43,7 +44,7 @@
     h1 {
       font-family: "Noto Serif TC", serif;
       font-size: 1.4rem;
-      
+
       font-weight: 700;
       margin: 0;
       color: $font-black;
@@ -79,5 +80,13 @@
     //     margin: 0 5px;
     //   }
     // }
+  }
+  @media (max-width: 960px) {
+    .title {
+      margin-bottom: 0;
+      h1 {
+        font-size: 1.2rem;
+      }
+    }
   }
 </style>

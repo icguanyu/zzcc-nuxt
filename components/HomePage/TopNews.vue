@@ -3,8 +3,10 @@
     <div class="content">
       <!-- <div class="head">
         <i class="fas fa-bullhorn"></i>重要訊息
-      </div> -->
-      <v-btn color="red" dark depressed > <i class="fas fa-bullhorn"></i>重要訊息</v-btn>
+      </div>-->
+      <v-btn color="red" dark depressed>
+        <i class="fas fa-bullhorn"></i>重要訊息
+      </v-btn>
       <div v-swiper:mySwiper="swiperOption" v-if="topNews">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(news,index) in topNews" :key="index">
@@ -51,6 +53,7 @@
 
 <style lang="scss" scoped>
   .top-news {
+    font-family: "Noto Sans TC", sans-serif;
     width: 100%;
     background: #fff;
     margin-top: 10px;
@@ -72,22 +75,24 @@
       //     margin-right: 5px;
       //   }
       // }
-      .news {
-        display: flex;
-        align-items: center;
-        padding: 0 10px;
-        .date {
-          color: $font-gray;
-        }
-        .msg {
-          margin-left: 10px;
-          color: $font-black;
-        }
-      }
     }
   }
-  .v-btn{
-    i{
+  .news {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    .date {
+      color: $font-gray;
+    }
+    .msg {
+      font-size: 1.2rem;
+      margin-left: 10px;
+      color: $font-black;
+    }
+  }
+  .v-btn {
+    font-size: 1.2rem;
+    i {
       margin-right: 5px;
     }
   }
@@ -100,5 +105,39 @@
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
+  }
+  @media (max-width: 960px) {
+    .top-news {
+      .content {
+        width: 95%;
+      }
+    }
+    .v-btn {
+      font-size: 1rem;
+    }
+    .news {
+      .msg {
+        font-size: 1rem;
+      }
+    }
+  }
+  @media (max-width: 640px) {
+    .swiper-container {
+      height: 30px;
+    }
+    .v-btn {
+      font-size: 14px;
+      height: 30px !important;
+      min-width: 45px !important;
+      padding: 0 8px !important;
+    }
+    .news {
+      .date {
+        display: none;
+      }
+      .msg {
+        font-size: 14px;
+      }
+    }
   }
 </style>
