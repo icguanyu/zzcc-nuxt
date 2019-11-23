@@ -294,6 +294,12 @@
         }
       }
     }
+    .more {
+      &:before,
+      &:after {
+        width: 200px;
+      }
+    }
   }
   @media (max-width: 640px) {
     .news-list {
@@ -306,7 +312,7 @@
           }
         }
         .left-side {
-          border: none ;
+          border: none;
           padding: 0;
           width: 90%;
           margin: auto;
@@ -348,6 +354,12 @@
         .thumbnail-right {
           max-height: 220px;
         }
+      }
+    }
+    .more {
+      &:before,
+      &:after {
+        width: 100px;
       }
     }
   }
